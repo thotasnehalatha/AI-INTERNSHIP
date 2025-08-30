@@ -1,0 +1,99 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/thotasnehalatha/AI-INTERNSHIP/blob/main/Chatbot%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def simple_chatbot(user_input):\n",
+        "    \"\"\"\n",
+        "    A simple rule-based chatbot that responds to user input.\n",
+        "    \"\"\"\n",
+        "    user_input = user_input.lower()  # Convert input to lowercase for easier matching\n",
+        "\n",
+        "    # Rule 1: Greetings 👋\n",
+        "    if any(word in user_input for word in [\"hello\", \"hi\", \"hey\"]):\n",
+        "        return \"Hello there! How can I help you today?\"\n",
+        "\n",
+        "    # Rule 2: Asking about the chatbot 🤖\n",
+        "    elif any(word in user_input for word in [\"what are you\", \"who are you\", \"your name\"]):\n",
+        "        return \"I am a simple rule-based chatbot created to assist you.\"\n",
+        "\n",
+        "    # Rule 3: Questions about Python 🐍\n",
+        "    elif \"python\" in user_input:\n",
+        "        return \"Python is a powerful, versatile programming language.\"\n",
+        "\n",
+        "    # Rule 4: Asking for help 🆘\n",
+        "    elif \"help\" in user_input:\n",
+        "        return \"I can help with basic questions. Try asking about Python or saying 'hello'.\"\n",
+        "\n",
+        "    # Default Rule: No match found 🤷\n",
+        "    else:\n",
+        "        return \"I'm sorry, I don't understand that. Can you please rephrase?\"\n",
+        "\n",
+        "# Main loop to interact with the chatbot\n",
+        "print(\"Chatbot: Hello! Type 'exit' to end the conversation.\")\n",
+        "while True:\n",
+        "    user_query = input(\"You: \")\n",
+        "    if user_query.lower() == \"exit\":\n",
+        "        print(\"Chatbot: Goodbye! Have a great day.\")\n",
+        "        break\n",
+        "\n",
+        "    response = simple_chatbot(user_query)\n",
+        "    print(f\"Chatbot: {response}\")"
+      ],
+      "metadata": {
+        "id": "Em_gOt21sn7m",
+        "outputId": "80ec5fd5-9532-42cc-8bd7-482a67f59257",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Chatbot: Hello! Type 'exit' to end the conversation.\n",
+            "You: hiii\n",
+            "Chatbot: Hello there! How can I help you today?\n",
+            "You: your name\n",
+            "Chatbot: I am a simple rule-based chatbot created to assist you.\n",
+            "You: python\n",
+            "Chatbot: Python is a powerful, versatile programming language.\n",
+            "You: help\n",
+            "Chatbot: I can help with basic questions. Try asking about Python or saying 'hello'.\n",
+            "You: i am sorry\n",
+            "Chatbot: I'm sorry, I don't understand that. Can you please rephrase?\n",
+            "You: goodbye\n",
+            "Chatbot: I'm sorry, I don't understand that. Can you please rephrase?\n",
+            "You: exit\n",
+            "Chatbot: Goodbye! Have a great day.\n"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "name": "Welcome To Colab",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
